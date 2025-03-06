@@ -12,7 +12,12 @@ import { Swiper as SwiperType } from "swiper/types";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Mousewheel,
+} from "swiper/modules";
 
 function App() {
   const [viewMode, setViewMode] = useState("features");
@@ -94,15 +99,15 @@ function App() {
       "6": "If you could redesign one aspect of the elevator system, what would it be?",
       "7": "Have you seen other elevator systems that work better? If so, what aspects of those systems stood out to you?",
       invisible:
-        "The purpose of these questions was to be able to retrieve information on how the users interact with the interface, for how long they do it, why they interact with it, etc. It also helps to understand which aspects they like/dislike about the elevators and how their priorities tell us what changes would most benefit them",
+        "The purpose of these questions was to retrieve information on how the users interact with the interface, for how long they do it, why they interact with it, etc. It also tells me which aspects they like/dislike about the elevators and how their priorities shoe us what changes would most benefit them",
     },
-    Sketch: {
+    "Sketch of the Interface": {
       "Annotations on the interface": "./images/elevator.png",
     },
-    "Full Responses": {
+    "Full Responses (verbose)": {
       "Responses from interviewees": "./images/fullResponseQuestions.png",
     },
-    "Input Analysis": {
+    "Response Analysis (breif)": {
       "1": "Most people take the stairs for short distances (1-2 floors) or if the elevator is far, full, or slow. Stairs are inconviniently placed which disencourages their use",
       "2": "Wait times are typically between 2-5 minutes, with longer waits at peak hours. Some will only wait for 1 minute max if in a rush.",
       "3": "General dissatisfaction: elevators are perceived as slow and inefficient, especially during peak hours. Some find buttons and direction indicators confusing.",
@@ -120,7 +125,7 @@ function App() {
     "Inside, she can't find the stairs to the third floor but only 2 elevators",
     "She presses the up button many times trying to make the elevator arrive faster",
     "When the elevator arrives she is greeted with a swarm of people but she still goes in",
-    "Suddenly she realizes that the elevator was going down since there was no clear indicator",
+    "Then, she realizes that the elevator was going down since there was no clear indicator when she got in",
     "She swipes her card but it doesn't seem to go through, so she waits for other people to select her floor",
     "She tries to close the elevator door but she confuses the open and close button",
     "At last by the time she arrives it is already too late",
@@ -195,6 +200,7 @@ function App() {
         style={{
           position: "absolute",
           overflowY: "scroll",
+          overflowX: "hidden",
           scrollbarWidth: "none",
           height: "920px",
           right: "100px",
@@ -219,10 +225,15 @@ function App() {
               Analysis of CIT's Elevators
             </h2>
             <p>
-              Explain why this analysis is important what we will take from it.
-              I am practicing to write faster so I am using this space to make
-              sure that my skills gained in monkey type are being put to good
-              use!
+              For computer science students at Brown university one of the most
+              visited places is the CIT. In order to get from one floor to
+              another, most use the 2 elevators available. However, is the
+              current system the best it can be?
+            </p>
+            <p>
+              This project will allow me to analyse this interface through the
+              use of personas to better understand the positives and pain points
+              of the CIT elevators.
             </p>
           </section>
           <h2
@@ -233,6 +244,10 @@ function App() {
           >
             Preparation and Observations
           </h2>
+          <p style={{ marginTop: "-20px", marginBottom: "20px" }}>
+            Our first step is to formulate questions that will allow us to know
+            how users of the CIT elevators feel about the interface
+          </p>
           {showAccordions &&
             apps.map((item) => {
               const subCategories = Object.keys(analysisTable[item]);
@@ -299,15 +314,17 @@ function App() {
             </h2>
             <img src={"./images/persona_1.png"} className="imageAnalysis" />
             <h3 className="imageTextSmall">
-              While this worklow works really good for experienced users, having
-              the dropdown close down after every action disencourages
-              exploration for new users.
+              Katie is a third year Philosophy student who is takes some CS
+              clases and doesn't frequent the CIT. She is perpetually late,
+              relies on coffee, and is a fast-walker. Katie pushes time to the
+              limit, squeezing in activities before running to the next task.
             </h3>
             <img src={"./images/persona_2.png"} className="imageAnalysis" />
             <h3 className="imageTextSmall">
-              Same issue here, after every action the dropdown closes.
-              Additionally, when opening the component with tab the first
-              element is not read by the screen reader.
+              Megan is an observant, socially awkward, always thinking five
+              steps ahead individual. She is a 2nd year CS student who prefers
+              structured and predictable things. Megan analyzes every detail,
+              sometimes to her own detriment.
             </h3>
           </div>
           <h2
@@ -319,13 +336,14 @@ function App() {
             Storyboard and Persona journey
           </h2>
           <Swiper
-            modules={[EffectCoverflow, Pagination]}
+            modules={[EffectCoverflow, Pagination, Navigation, Mousewheel]}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={2.2}
             spaceBetween={-150}
             loop={false}
+            mousewheel={true}
             pagination={{ clickable: true }}
             coverflowEffect={{
               rotate: 0,
@@ -380,13 +398,15 @@ function App() {
               This project has allowed me to understand how the use of personas
               can help me better internalize the workflow and intent of
               interfaces. In this case having individuals who pose constraints
-              from the "common average" allows me to take into consideration
-              accesibility or pain points which, if fixed, will favor many. This
-              process is further excemplified with the use of a story board
-              which allows me to plan out how specific users will interact with
-              the selected interface. Additionally, having empathy maps helps to
-              better understand the characters created.
+              different from the "common average user" allows me to take into
+              consideration accesibility or pain points which, if fixed, will
+              favor many. This process is further excemplified with the use of a
+              story board which allows me to plan out how specific users will
+              interact with the selected interface. Additionally, having empathy
+              maps helps to better understand the characters created and better
+              embody their experience to tailor the interface analysis to them.
             </p>
+            <p style={{ marginBottom: "50px", marginTop: "20px" }}></p>
           </section>
         </div>
       </div>
