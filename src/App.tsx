@@ -91,37 +91,36 @@ function App() {
 
   const analysisTable: Record<string, Record<string, string>> = {
     "Posed Questions": {
-      "1": "Do you ever opt for the stairs instead of the elevator? If so, why?",
-      "2": "How long do you typically wait for an elevator during peak hours?",
-      "3": "How would you describe your experience with the elevator system in terms of efficiency and usability?",
-      "4": "Have you ever experienced delays, malfunctions or issues when using the elevators? If so, how often?",
-      "5": "Are there any confusing aspects of the elevator interface?",
-      "6": "If you could redesign one aspect of the elevator system, what would it be?",
-      "7": "Have you seen other elevator systems that work better? If so, what aspects of those systems stood out to you?",
+      "1": "What is the primary reason to use the CIT elevators?",
+      "2": "Do you ever opt for the stairs instead of the elevator? If so, why?",
+      "3": "How long do you typically wait for an elevator during peak hours? What factors affect this?",
+      "4": "How would you describe your experience with the elevator system in terms of efficiency and usability?",
+      "5": "Have you ever experienced delays, malfunctions or issues when using the elevators? If so, how often?",
+      "6": "Are there any confusing aspects of the elevator interface?",
+      "7": "If you could redesign one aspect of the elevator system, what would it be?",
       invisible:
         "The purpose of these questions was to retrieve information on how the users interact with the interface, for how long they do it, why they interact with it, etc. It also tells me which aspects they like/dislike about the elevators and how their priorities shoe us what changes would most benefit them",
     },
     "Sketch of the Interface": {
       "Annotations on the interface": "./images/elevator.png",
     },
-    "Full Responses (verbose)": {
+    "Full Responses": {
       "Responses from interviewees": "./images/fullResponseQuestions.png",
     },
-    "Response Analysis (breif)": {
-      "1": "Most people take the stairs for short distances (1-2 floors) or if the elevator is far, full, or slow. Stairs are inconviniently placed which disencourages their use",
-      "2": "Wait times are typically between 2-5 minutes, with longer waits at peak hours. Some will only wait for 1 minute max if in a rush.",
-      "3": "General dissatisfaction: elevators are perceived as slow and inefficient, especially during peak hours. Some find buttons and direction indicators confusing.",
-      "4": "Few report major malfunctions, but occasional unintuitive controls and slowness are common concerns.",
-      "5": "Common confusion with door-closing buttons (>< vs. >|<) and unclear swipe access feedback. Some experience panic when trying to stop closing doors.",
-      "6": "Key suggestions include adding floor indicators, improving interior design, making swipe access clearer, and labeling door buttons ('open'/'close').",
-      "7": "Preferred features in better systems: faster speed, clear floor indicators, audible announcements, modern design, and clear swipe feedback. Hotels and Metcalf elevators are often cited as good examples.",
+    "Response Analysis": {
+      "1": "Most of the users interact with the elevator to get to the higher floors of the CIT either for class or meetings, one of them thinks they are forced to use it regardless",
+      "2": "Most people take the stairs for short distances, but their decision depends on urgency, and availability. Some avoid certain stairs due to their inconvenient/hidden placement. Others take the stairs if they see a full elevator or if it's going in the opposite direction.",
+      "3": "Wait times vary significantly based on the individual's patience and urgency. Mostly its between 1-5 minutes. Some are willing to wait as long as necessary if they are not in a rush, whereas others won’t wait more than a minute.",
+      "4": "There is a shared perception that the elevators are slow and inefficient, especially at peak hours. Issues like unclear direction indicators and unintuitive button layouts contribute to dissatisfaction. Some experience occasional confusion but don't consider it a major problem, while others feel the entire system could be more streamlined.",
+      "5": "Malfunctions are rare, and most interviewees do not report significant breakdowns. However, one respondent mentioned experiencing an elevator going in the wrong direction due to unclear indicators. Overall, while technical failures are uncommon, the perceived inefficiencies create a sense of inconvenience.",
+      "6": "The most common confusion stems from the door-closing buttons. Users struggle to differentiate between >< and >|<. Another issue mentioned is unclear swipe access feedback. Some interviewees also felt that choosing between elevators adds uncertainty. The larger one tends to take longer while the smaller one often gets overcrowded.",
+      "7": "Suggestions include clearer floor indicators, better swipe access feedback, and have better labeling for 'open' and 'close' to avoid confusion. Some also want the elevator interior to be redesigned, as its current look is uninviting.",
     },
   };
 
   const imageDescriptions = [
     "After staying late coding, Katie wakes up late to class and rushes out of her dorm",
-    "She ignore the traffic light and runs to the CIT to try to get on time",
-    "When she enters, she takes the stairs to the second floor knowing that the elevator is slow",
+    "When she enters the CIT, she takes the stairs to the second floor knowing that the elevator is slow",
     "Inside, she can't find the stairs to the third floor but only 2 elevators",
     "She presses the up button many times trying to make the elevator arrive faster",
     "When the elevator arrives she is greeted with a swarm of people but she still goes in",
@@ -225,15 +224,17 @@ function App() {
               Analysis of CIT's Elevators
             </h2>
             <p>
-              For computer science students at Brown university one of the most
-              visited places is the CIT. In order to get from one floor to
-              another, most use the 2 elevators available. However, is the
-              current system the best it can be?
+              For Computer Science students at Brown University, one of the most
+              frequently visited buildings is the Center for Information
+              Technology (CIT). To navigate between floors, most students rely
+              on the two available elevators. However, is the current system as
+              efficient and user-friendly as it could be?
             </p>
             <p>
-              This project will allow me to analyse this interface through the
-              use of personas to better understand the positives and pain points
-              of the CIT elevators.
+              This project aims to analyze the elevator interface using
+              personas, allowing for a deeper understanding of both its
+              strengths and pain points. Through this approach, I will assess
+              the user experience and identify potential areas for improvement.
             </p>
           </section>
           <h2
@@ -321,10 +322,10 @@ function App() {
             </h3>
             <img src={"./images/persona_2.png"} className="imageAnalysis" />
             <h3 className="imageTextSmall">
-              Megan is an observant, socially awkward, always thinking five
-              steps ahead individual. She is a 2nd year CS student who prefers
-              structured and predictable things. Megan analyzes every detail,
-              sometimes to her own detriment.
+              Megan is an observant, socially awkward individual. She is a 2nd
+              year CS student who prefers structured and predictable things.
+              Megan will go out of her way to avoid awkward interactions, even
+              if it means taking the stairs or a longer route.
             </h3>
           </div>
           <h2
@@ -360,7 +361,7 @@ function App() {
               setActiveSlide(swiper.realIndex)
             }
           >
-            {Array.from({ length: 10 }, (_, i) => (
+            {Array.from({ length: 9 }, (_, i) => (
               <SwiperSlide
                 key={i}
                 style={{ display: "flex", justifyContent: "center" }}
