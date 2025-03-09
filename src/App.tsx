@@ -99,7 +99,7 @@ function App() {
       "6": "Are there any confusing aspects of the elevator interface?",
       "7": "If you could redesign one aspect of the elevator system, what would it be?",
       invisible:
-        "The purpose of these questions was to retrieve information on how the users interact with the interface, for how long they do it, why they interact with it, etc. It also tells me which aspects they like/dislike about the elevators and how their priorities shoe us what changes would most benefit them",
+        "The purpose of these questions was to retrieve information on how the users interact with the interface, for how long they do it, why they interact with it, etc. It also tells me which aspects they like/dislike about the elevators and how their priorities show us what changes would most benefit them",
     },
     "Sketch of the Interface": {
       "Annotations on the interface": "./images/elevator.png",
@@ -315,16 +315,16 @@ function App() {
             </h2>
             <img src={"./images/persona_1.png"} className="imageAnalysis" />
             <h3 className="imageTextSmall">
-              Katie is a third year Philosophy student who is takes some CS
+              Alex is a third year Philosophy student who is takes some CS
               clases and doesn't frequent the CIT. She is perpetually late,
-              relies on coffee, and is a fast-walker. Katie pushes time to the
+              relies on coffee, and is a fast-walker. Alex pushes time to the
               limit, squeezing in activities before running to the next task.
             </h3>
             <img src={"./images/persona_2.png"} className="imageAnalysis" />
             <h3 className="imageTextSmall">
-              Megan is an observant, socially awkward individual. She is a 2nd
+              Chris is an observant, socially awkward individual. She is a 2nd
               year CS student who prefers structured and predictable things.
-              Megan will go out of her way to avoid awkward interactions, even
+              Chris will go out of her way to avoid awkward interactions, even
               if it means taking the stairs or a longer route.
             </h3>
           </div>
